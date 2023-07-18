@@ -16,7 +16,11 @@ function App() {
   return (
     <div className="Pokemon-app">
       {!wasClicked && <ShowLocations onClick={handleClick} />}
-      {locationId && <Pokemon id={locationId} />}
+      {locationId && <Pokemon 
+                        id={locationId} 
+                        setWasClicked={setWasClicked} 
+                        setLocationId={setLocationId}
+                      />}
     </div>
   );
 }

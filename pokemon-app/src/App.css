@@ -46,7 +46,7 @@ h2 {
   left: 1%;
 }
 
-.pokemon-card {
+.location-pokemon-card {
   /* border-radius: 300%; */
   /* text-align: center;
   align-items: center;
@@ -81,4 +81,42 @@ h2 {
   /* image-rendering: pixelated; */
   height: 200px;
   width: 200px;
+}
+
+.location-pokemon {
+  border-radius: 100%;
+  width: 20%;
+  height: 20%;
+  position: relative;
+  background-color: aquamarine;
+  animation-name: location_pokemon;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes location_pokemon {
+  0%   {background-color:red; left:0px;}
+  25%  {background-color:yellow; left:100px;}
+  50%  {background-color:blue; left:200px; }
+  75%  {background-color:greenyellow; left:100px; }
+  100% {background-color:red; left:0px;}
+}
+
+.user-pokemon {
+  border-radius: 100%;
+  width: 20%;
+  height: 20%;
+  position: relative;
+  background-color: aqua;
+  animation-name: user_pokemon;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes user_pokemon {
+  0%   {background-color:yellow; left:0px;}
+  25%  {background-color:fuchsia; left:100px;}
+  50%  {background-color:greenyellow; left:200px; }
+  75%  {background-color:deeppink; left:100px; }
+  100% {background-color:turquoise; left:0px;}
 }
