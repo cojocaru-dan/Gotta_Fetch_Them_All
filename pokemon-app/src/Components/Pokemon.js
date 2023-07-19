@@ -17,7 +17,7 @@ export default function Pokemon(props) {
   }
 
   const [pokemon, setPokemon] = useState("");
-  const [pokemonImage, setPokemonImage] = useState();
+  const [locationPokemon, setLocationPokemon] = useState("");
   const [userFirstPokemon, setUserFirstPokemon] = useState("");
   const [userSecondPokemon, setUserSecondPokemon] = useState("");
   const [userThirdPokemon, setUserThirdPokemon] = useState("");
@@ -39,8 +39,7 @@ export default function Pokemon(props) {
     fetch(pokemon.url)
       .then((res) => res.json())
       .then((data) => {
-        console.log("Pokemon fetch url", data);
-        setPokemonImage(data.sprites["front_default"]);
+        setLocationPokemon(data);
       });
   }, [pokemon]);
 
@@ -67,10 +66,10 @@ export default function Pokemon(props) {
       return name[0].toUpperCase() + name.slice(1);
     }
   };
-  // console.log("userFirstPokemon", userFirstPokemon);
+
   return (
     <>
-      {pokemon.name === null ? (
+      {locationPokemon === "" ? (
         <>
           <h3>This location doesn't seem to have any pokémon</h3>
           <button
@@ -83,12 +82,11 @@ export default function Pokemon(props) {
           </button>
         </>
       ) : (
-        <Encounter pokemon={pokemon} 
+        <Encounter locationPokemon={locationPokemon} 
                    userFirstPokemon={userFirstPokemon} 
                    userSecondPokemon={userSecondPokemon}
                    userThirdPokemon={userThirdPokemon}
                    capitalizedName={capitalizedName}
-                   pokemonImage={pokemonImage}
         />
       )}
     </>

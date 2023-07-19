@@ -4,21 +4,10 @@ export default function TwoPokemonsEncounter({
   locationPokemon,
   userPokemon,
   capitalizedName,
-  pokemonImage,
-  // pokemonTypes
+  pokemonTypes
 }) {
 
-  const [locationPokemonStats, setLocationPokemonStats] = useState("")
-
-  useEffect(() => {
-    fetch(locationPokemon.url)
-      .then((res) => res.json())
-      .then((data) => {
-        setLocationPokemonStats(data);
-        console.log("DATA STATS ", data.stats[0]["base_stat"]);
-      });
-    }, []);
-    function handleAttack() {}
+  function handleAttack() {}
 
   return (
     <div>
@@ -26,15 +15,16 @@ export default function TwoPokemonsEncounter({
         <h2 className="pokemon-name">
           {capitalizedName(locationPokemon.name)}
         </h2>
-        <img src={pokemonImage} className="pokemon-image" />
+        <img src={locationPokemon.sprites["front_default"]} className="pokemon-image" />
         <div className="stats">
-          {/* <div className="pokemon-type">{locationPokemonStats.types[0]}</div> */}
+          <div className="pokemon-type">{pokemonTypes(locationPokemon)}</div>
           <h2 className="pokemon-hp">
-            HP: {locationPokemonStats.stats[0]["base_stat"]}
+            HP: {locationPokemon.stats[0]["base_stat"]}
           </h2>
           <h2 className="pokemon-attack">
-            {/* Attack: {locationPokemon.stats[1]["base_stat"]} */}
+            Attack: {locationPokemon.stats[1]["base_stat"]}
           </h2>
+          <h2 className="pokemon-defense">Deffense: {locationPokemon.stats[2]["base_stat"]}</h2>
         </div>
       </div>
       <button className="attack-button" onClick={handleAttack}>
@@ -47,14 +37,14 @@ export default function TwoPokemonsEncounter({
           className="pokemon-image"
         />
         <div className="stats">
-          {/* <div className="pokemon-type">{pokemonTypes(userPokemon)}</div> */}
+          <div className="pokemon-type">{pokemonTypes(userPokemon)}</div>
           <h2 className="pokemon-hp">
-            {/* HP: {userPokemon.stats[0]["base_stat"]} */}
+            HP: {userPokemon.stats[0]["base_stat"]}
           </h2>
           <h2 className="pokemon-attack">
-            {/* Attack: {userPokemon.stats[1]["base_stat"]} */}
+            Attack: {userPokemon.stats[1]["base_stat"]}
           </h2>
-          {/* <h2 className="pokemon-defense">Deffense: {userFirstPokemon.stats[2]["base_stat"]}</h2> */}
+          <h2 className="pokemon-defense">Deffense: {userPokemon.stats[2]["base_stat"]}</h2>
         </div>
       </div>
     </div>

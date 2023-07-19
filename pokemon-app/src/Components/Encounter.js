@@ -2,12 +2,11 @@ import { useState } from "react";
 import PokemonFight from "./PokemonFight";
 
 export default function Encounter({
-  pokemon,
+  locationPokemon,
   userFirstPokemon,
   userSecondPokemon,
   userThirdPokemon,
   capitalizedName,
-  pokemonImage,
 }) {
   const [selectedPokemon, setSelectedPokemon] = useState(null);
 
@@ -24,10 +23,10 @@ export default function Encounter({
 
   const pokemonTypes = function (pokemon) {
 
-    if (pokemon != "") {
+    if (pokemon !== "") {
       if (pokemon.types.length > 1) {
-        return pokemon.types.map((typeItem) => {
-          return <p>{typeItem.type.name}</p>;
+        return pokemon.types.map((typeItem, index) => {
+          return <h3 key={index}>{typeItem.type.name}</h3>;
         });
       } else {
         return pokemon.types.type.name;
@@ -36,8 +35,6 @@ export default function Encounter({
     return;
   };
 
-  if (userFirstPokemon != "")
-
   return !selectedPokemon ? (
     userFirstPokemon !== "" &&
     userSecondPokemon !== "" &&
@@ -45,8 +42,8 @@ export default function Encounter({
       <>
       {/* Pokemon at the location */}
         <div className="location-pokemon-card">
-          <h2 className="pokemon-name">{capitalizedName(pokemon.name)}</h2>
-          <img src={pokemonImage} className="pokemon-image" />
+          <h2 className="pokemon-name">{capitalizedName(locationPokemon.name)}</h2>
+          <img src={locationPokemon.sprites["front_default"]} className="pokemon-image" />
         </div>
         <h2 className="choose-message">Choose a pokemon for battle!</h2>
         {/* Users pokemons */}
@@ -119,10 +116,9 @@ export default function Encounter({
     ) : null
   ) : (
     <PokemonFight
-      locationPokemon={pokemon}
+      locationPokemon={locationPokemon}
       userPokemon={selectedPokemon}
       capitalizedName={capitalizedName}
-      pokemonImage={pokemonImage}
       pokemonTypes={pokemonTypes}
     />
   );
