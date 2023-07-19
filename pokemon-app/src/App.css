@@ -1,15 +1,17 @@
 body {
-  background: url("https://media.discordapp.net/attachments/1072089202952523866/1130416137054720120/4325577.jpg?width=1138&height=640");
+  background: url("../public/images/background3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
-  height: 100vh;
+  min-height: 100%;
+  width: 100%;
 
 }
 
 #root {
   margin: 0;
-  height: 100vh;
+  min-height: 100%;
+  width: 100%;
 }
 
 .location-cards-container {
@@ -47,24 +49,13 @@ h2 {
 }
 
 .location-pokemon-card {
-  /* border-radius: 300%; */
-  /* text-align: center;
-  align-items: center;
-  justify-content: center; */
-  /* background: url("https://media.discordapp.net/attachments/1072089202952523866/1130415650934894622/1089608.png?width=1023&height=640"); */
-  /* background-color: rgb(2, 120, 120); */
   color: rgb(255, 255, 255);
-  /* padding: 2px 14px; */
   height: 100%;
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  /* border: solid black 2px; */
-  /* position: absolute;
-  top: 20%;
-  left: 45%; */
   position: relative;
-  margin: 300px 100px 300px 100px;
+  margin: 70px;
   display: grid;
   justify-items: center;
 }
@@ -83,40 +74,49 @@ h2 {
   width: 200px;
 }
 
-.location-pokemon {
+.battle-location-pokemon {
   border-radius: 100%;
   width: 20%;
   height: 20%;
   position: relative;
-  background-color: aquamarine;
+  /* background-color: aquamarine;
   animation-name: location_pokemon;
   animation-duration: 4s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
 }
 
-@keyframes location_pokemon {
+.user-pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  align-content: center;
+  gap: 10px 30px;
+}
+
+/* @keyframes location_pokemon {
   0%   {background-color:red; left:0px;}
   25%  {background-color:yellow; left:100px;}
   50%  {background-color:blue; left:200px; }
   75%  {background-color:greenyellow; left:100px; }
   100% {background-color:red; left:0px;}
-}
+} */
 
-.user-pokemon {
+.battle-user-chosen-pokemon {
   border-radius: 100%;
   width: 20%;
   height: 20%;
   position: relative;
-  background-color: aqua;
+  /* background-color: aqua;
   animation-name: user_pokemon;
   animation-duration: 4s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
 }
 
-@keyframes user_pokemon {
+/* @keyframes user_pokemon {
   0%   {background-color:yellow; left:0px;}
   25%  {background-color:fuchsia; left:100px;}
   50%  {background-color:greenyellow; left:200px; }
   75%  {background-color:deeppink; left:100px; }
   100% {background-color:turquoise; left:0px;}
-}
+} */

@@ -39,6 +39,7 @@ export default function Pokemon(props) {
     fetch(pokemon.url)
       .then((res) => res.json())
       .then((data) => {
+        console.log("Pokemon fetch url", data);
         setPokemonImage(data.sprites["front_default"]);
       });
   }, [pokemon]);
@@ -66,7 +67,7 @@ export default function Pokemon(props) {
       return name[0].toUpperCase() + name.slice(1);
     }
   };
-
+  // console.log("userFirstPokemon", userFirstPokemon);
   return (
     <>
       {pokemon.name === null ? (
