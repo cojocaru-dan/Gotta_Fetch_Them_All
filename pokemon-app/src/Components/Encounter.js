@@ -7,6 +7,8 @@ export default function Encounter({
   userSecondPokemon,
   userThirdPokemon,
   capitalizedName,
+  userCapturedPokemons,
+  setUserCapturedPokemons
 }) {
   const [selectedPokemon, setSelectedPokemon] = useState(null);
 
@@ -29,7 +31,7 @@ export default function Encounter({
           return <h3 key={index}>{typeItem.type.name}</h3>;
         });
       } else {
-        return pokemon.types.type.name;
+        return pokemon.types[0].type.name;
       }
     }
     return;
@@ -120,6 +122,8 @@ export default function Encounter({
       userPokemon={selectedPokemon}
       capitalizedName={capitalizedName}
       pokemonTypes={pokemonTypes}
+      userCapturedPokemons={userCapturedPokemons}
+      setUserCapturedPokemons={setUserCapturedPokemons}
     />
   );
 }

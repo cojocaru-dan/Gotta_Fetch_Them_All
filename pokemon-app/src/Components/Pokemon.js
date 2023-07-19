@@ -21,6 +21,7 @@ export default function Pokemon(props) {
   const [userFirstPokemon, setUserFirstPokemon] = useState("");
   const [userSecondPokemon, setUserSecondPokemon] = useState("");
   const [userThirdPokemon, setUserThirdPokemon] = useState("");
+  const [userCapturedPokemons, setUserCapturedPokemons] = useState(["test"]);
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/location-area/${Number(id) + 1}/`)
