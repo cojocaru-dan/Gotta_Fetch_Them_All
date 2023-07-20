@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
-import ShowLocations from "./ShowLocations";
+import { useState } from "react";
+import capturedPokemons from "../CapturedPokemons";
+import BattleLocationPokemon from "./BattleLocationPokemon";
+import BattleUserChosenPokemon from "./BattleUserChosenPokemon";
 
 let turn = 0;
 
@@ -8,6 +10,7 @@ export default function TwoPokemonsEncounter({
   userPokemon,
   capitalizedName,
   pokemonTypes,
+  setWasClicked
   // userCapturedPokemons={userCapturedPokemons},
   // setUserCapturedPokemons={setUserCapturedPokemons}
 }) {
@@ -27,7 +30,7 @@ export default function TwoPokemonsEncounter({
   function handleAttack() {
     let random = Math.random() * (255 - 217) + 217;
 
-    if (turn % 2 == 0) {
+    if (turn % 2 === 0) {
       turn = turn + 1;
       console.log(turn);
       setLocationPokemonHP((prevStateHP) =>
@@ -43,52 +46,32 @@ export default function TwoPokemonsEncounter({
     }
   }
 
-  // if (locationPokemonHP <= 0)setUserCapturedPokemons(prevState => [...prevState, locationPokemon])
-
+  if (locationPokemonHP <= 0 && (capturedPokemons.find(capturedPokemon => capturedPokemon.name === locationPokemon.name) === undefined)) {
+    capturedPokemons.push(locationPokemon);
+  }
 
   return (
-    <div>
-
-      <div className="battle-location-pokemon">
-        <h2 className="pokemon-name">
-          {capitalizedName(locationPokemon.name)}
-        </h2>
-        <img
-          src={locationPokemon.sprites["front_default"]}
-          className="pokemon-image"
-        />
-        {/* Battle won - pokemon captured */}
-        {locationPokemonHP < 0 ? <div className="pokemon-captured">
-          <h2>Pokemon captured!</h2>
-          {/* Go back to locations */}
-          <button onClick={() => window.location.reload(true)}>Go back to locations</button>
-        </div>:
-        // Location's stats
-        <div className="stats">
-          <div className="pokemon-type">{pokemonTypes(locationPokemon)}</div>
-          <h2 className="pokemon-hp">HP: {locationPokemonHP}</h2>
-          <h2 className="pokemon-attack">Attack: {locationsAttack}</h2>
-        </div>}
-      </div>
+    <div className="battle-pokemon">
+      <BattleLocationPokemon 
+          locationPokemon={locationPokemon}
+          locationPokemonHP={locationPokemonHP}
+          locationsAttack={locationsAttack}
+          capitalizedName={capitalizedName}
+          setWasClicked={setWasClicked}
+          pokemonTypes={pokemonTypes}
+      />
       {/* Attack button */}
       {locationPokemonHP > 0 && <button className="attack-button" onClick={handleAttack}>
         Attack
       </button>}
-      {/* Users pokemon */}
-      <div className="battle-user-chosen-pokemon">
-        <h2 className="pokemon-name">{capitalizedName(userPokemon.name)}</h2>
-        <img
-          src={userPokemon.sprites["front_default"]}
-          className="pokemon-image"
-        />
-        {/* Users' stats */}
-        <div className="stats">
-          <div className="pokemon-type">{pokemonTypes(userPokemon)}</div>
-          <h2 className="pokemon-hp">HP: {userPokemonHP}</h2>
-          <h2 className="pokemon-attack">Attack: {usersAttack}</h2>
-          {/* <h2 className="pokemon-defense">Deffense: {userPokemon.stats[2]["base_stat"]}</h2> */}
-        </div>
-      </div>
+      <BattleUserChosenPokemon
+          userPokemon={userPokemon}
+          userPokemonHP={userPokemonHP}
+          usersAttack={usersAttack}
+          capitalizedName={capitalizedName}
+          setWasClicked={setWasClicked}
+          pokemonTypes={pokemonTypes}
+      />
     </div>
   );
 }
