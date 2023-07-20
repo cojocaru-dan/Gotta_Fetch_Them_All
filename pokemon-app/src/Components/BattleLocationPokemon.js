@@ -18,9 +18,9 @@ export default function BattleLocationPokemon({
             {/* Battle won - pokemon captured */}
             {locationPokemonHP <= 0 ? (
             <div className="pokemon-captured">
-                <h2>Pokemon captured!</h2>
+                <h2 className="captured-message">Pokemon captured!</h2>
                 {/* Go back to locations */}
-                <button onClick={() => setWasClicked(false)}>Go back to locations</button>
+                <button className="go-back-btn" onClick={() => setWasClicked(false)}>Go back to locations ⬅</button>
             </div>
             ) :
             // Location's stats

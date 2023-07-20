@@ -28,13 +28,15 @@ export default function Encounter({
 
   const pokemonTypes = function (pokemon) {
 
+
+
     if (pokemon !== "") {
       if (pokemon.types.length > 1) {
         return pokemon.types.map((typeItem, index) => {
-          return <h3 key={index}>{typeItem.type.name}</h3>;
+          return <h3 key={index}>{typeItem.type.name[0].toUpperCase() + typeItem.type.name.slice(1)}</h3>;
         });
       } else {
-        return <h3 key={0}>{pokemon.types[0].type.name}</h3>;
+        return <h3 key={0}>{pokemon.types[0].type.name[0].toUpperCase() + pokemon.types[0].type.name.slice(1)}</h3>;
       }
     }
     return;

@@ -15,9 +15,9 @@ export default function BattleUserChosenPokemon({
         />
         {userPokemonHP <= 0 ? (
         <div className="battle-user-chosen-pokemon-lose">
-            <h2>Your pokemon lose the battle!</h2>
+            <h2  className="lose-message">Your pokemon lost the battle! 😞  </h2>
             {/* Go back to locations */}
-            <button onClick={() => setWasClicked(false)}>Go back to locations</button>
+            <button className="go-back-btn" onClick={() => setWasClicked(false)}>Go back to locations ⬅  </button>
         </div>
         ) : 
         (<div className="stats">

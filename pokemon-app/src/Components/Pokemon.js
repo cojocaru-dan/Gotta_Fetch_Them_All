@@ -10,7 +10,7 @@ export default function Pokemon(props) {
     "https://pokeapi.co/api/v2/pokemon/bulbasaur",
     "https://pokeapi.co/api/v2/pokemon/charizard",
     "https://pokeapi.co/api/v2/pokemon/yveltal",
-  ];
+  ]; 
 
   function randomize(array) {
     return Math.floor(Math.random() * array.length);
