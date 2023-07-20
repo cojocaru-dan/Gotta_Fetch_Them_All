@@ -1,5 +1,5 @@
 body {
-  background: url("../public/images/background3.jpg");
+  background: url("../public/images/background6.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -24,11 +24,11 @@ body {
 }
 
 .location-card {
-  border-radius: 300%;
+  border-radius: 360%;
   text-align: center;
   align-items: center;
   justify-content: center;
-  /* background: url("https://media.discordapp.net/attachments/1072089202952523866/1130415650934894622/1089608.png?width=1023&height=640"); */
+  background: url("../public/images/location2.PNG");
   background-color: rgb(2, 120, 120);
   color: white;
   padding: 2px 14px;
@@ -52,10 +52,10 @@ h2 {
   color: rgb(255, 255, 255);
   height: 100%;
   width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
   transition: 0.3s;
   position: relative;
-  margin: 70px;
+  margin: 10px;
   display: grid;
   justify-items: center;
 }
