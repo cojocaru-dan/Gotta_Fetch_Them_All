@@ -51,27 +51,19 @@ body {
 .location-pokemon-card {
   color: rgb(255, 255, 255);
   width: 40%;
-  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
   transition: 0.3s;
   position: relative;
-  /* display: grid; */
   justify-items: center;
-
-
   margin-top: 100px;
   margin-left: 42%;
-
   max-width: 250px;
   border-radius: 50px;
-  /* background: #9568f6a0; */
   background: #603f33ca;
   border: solid black 2px;
-
   display: flex;
   flex-wrap: wrap;
   height: 250px;
   padding: 0px 31px 60px 31px;
-
   align-items: center;
 }
 
@@ -86,9 +78,7 @@ body {
 
   align-items: center;
   justify-content: space-evenly;
-  /* align-content: center; */
   gap: 10px 30px;
-  
 }
 
 .user-pokemon-container > div {
@@ -112,12 +102,12 @@ body {
 .battle-pokemon {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row-reverse;
   height: 600px;
   padding: 0px 31px 60px 31px;
   margin-top: 250px;
   align-items: center;
   justify-content: space-evenly;
-  /* align-content: center; */
   gap: 10px 0px;
 }
 
@@ -161,7 +151,8 @@ body {
 
 .stats {
   width: 172.14px;
-  text-align: center;
+  text-align: left;
+  margin-left:-20px;
 }
 
 
@@ -199,7 +190,8 @@ body {
   font-size: 25px;
   -webkit-text-stroke-width: 0.3px;
   -webkit-text-stroke-color: black;
-  text-align: center;
+  text-align: left;
+  margin-left: 30px;
 }
 
 .pokemon-hp {
@@ -207,17 +199,17 @@ body {
   font-size: 28px;
   font-weight: bold;
   color: rgb(243, 138, 93);
-  text-align: center;
   text-shadow: 2px 2px 4px #0c0908e4, 0 0 0 rgb(var(--primery));
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-  text-align: center;
   --primery: 1, 161, 161;
   --bg: 239, 239, 242;
   --ch1: 126, 216, 118;
   --ch2: 99, 219, 243;
   --ch3: 243, 118, 0;
   --ch4: 255, 213, 6;
+  text-align: left;
+  margin-left: 30px;
 }
 
 .pokemon-attack {
@@ -225,17 +217,17 @@ body {
   font-size: 28px;
   font-weight: bold;
   color: rgb(157, 172, 255);
-  text-align: center;
   text-shadow: 2px 2px 4px #0c0908e4, 0 0 0 rgb(var(--primery));
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-  text-align: center;
   --primery: 1, 161, 161;
   --bg: 239, 239, 242;
   --ch1: 126, 216, 118;
   --ch2: 99, 219, 243;
   --ch3: 243, 118, 0;
   --ch4: 255, 213, 6;
+  text-align: left;
+  margin-left: 30px;
 }
 
 .choose-message {
@@ -263,16 +255,17 @@ body {
   /* image-rendering: pixelated; */
   height: 200px;
   width: 200px;
+  margin-left: 30px;
 }
 
 .attack-button {
   font-family: 'Poppins', sans-serif;
-  font-size: 64px;
+  font-size: 60px;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.745);
   text-align: center;
   text-shadow: 2px 2px 4px #2b0b4ae4, 0 0 0 rgb(var(--primery));
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   text-align: center;
   --primery: 1, 161, 161;
@@ -285,7 +278,8 @@ body {
   margin: 0;
   box-sizing: border-box;  
   background: #603f33ca;
-  border: solid 1,5px;
+  border: solid 1,1px;
+  transition: 0.4s;
 }
 
 .attack-button:hover {
@@ -293,9 +287,6 @@ body {
   cursor: pointer;
 }
 
-.capyured-message {
-
-}
 
 .go-back-btn {
   font-family: 'Poppins', sans-serif;

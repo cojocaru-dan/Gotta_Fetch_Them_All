@@ -61,7 +61,7 @@ export default function TwoPokemonsEncounter({
           pokemonTypes={pokemonTypes}
       />
       {/* Attack button */}
-      {locationPokemonHP > 0 && <button className="attack-button" onClick={handleAttack}>
+      {(locationPokemonHP > 0 && userPokemonHP > 0) && <button className="attack-button" onClick={handleAttack}>
         Attack
       </button>}
       <BattleUserChosenPokemon
