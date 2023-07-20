@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import ShowLocations from "./Components/ShowLocations";
 import Pokemon from "./Components/Pokemon";
@@ -15,12 +15,14 @@ function App() {
 
   return (
     <div className="Pokemon-app">
-      {!wasClicked && <ShowLocations onClick={handleClick} />}
-      {locationId && <Pokemon 
-                        id={locationId} 
-                        setWasClicked={setWasClicked} 
-                        setLocationId={setLocationId}
-                      />}
+      {!wasClicked ? <ShowLocations onClick={handleClick} />
+                   : <Pokemon 
+                    id={locationId} 
+                    setWasClicked={setWasClicked} 
+                    setLocationId={setLocationId}
+                  />
+      }
+      
     </div>
   );
 }

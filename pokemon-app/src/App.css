@@ -55,7 +55,6 @@ h2 {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   position: relative;
-  margin: 70px;
   display: grid;
   justify-items: center;
 }
@@ -66,6 +65,7 @@ h2 {
   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
+  text-align: center;
 }
 
 .pokemon-image {
@@ -107,6 +107,7 @@ h2 {
   width: 20%;
   height: 20%;
   position: relative;
+  margin-left: -20px;
   /* background-color: aqua;
   animation-name: user_pokemon;
   animation-duration: 4s;
@@ -120,3 +121,16 @@ h2 {
   75%  {background-color:deeppink; left:100px; }
   100% {background-color:turquoise; left:0px;}
 } */
+
+.battle-pokemon {
+  margin-left: 45%;
+}
+
+.stats {
+  width: 172.14px;
+  text-align: center;
+}
+
+.attack-button {
+  width: 18%;
+}
